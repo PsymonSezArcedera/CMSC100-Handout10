@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-await mongoose.connect('mongodb://127.0.0.1:27017/ICS')
+await mongoose.connect('mongodb+srv://Psymon:dbUserPassword@cluster0.fc4r35o.mongodb.net/ICS')
 
 const Subject = mongoose.model('Subject', {
 	code: String,

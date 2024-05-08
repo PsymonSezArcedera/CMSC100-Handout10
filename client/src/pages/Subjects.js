@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Subjects() {
 
   const [ subjects, setSubjects ] = useState([])
   const [ greeting, setGreeting ] = useState('')
+  
   useEffect(() => {
     fetch('http://localhost:3001/get-subjects')
       .then(response => response.json())
@@ -27,7 +28,7 @@ export default function Subjects() {
   return (
     <>
       <ol>
-        { subjects.map((subject, i) => <li key={i}>{subject.code}</li>) }
+        { subjects.map((subject, i) => <li key={i}><Link to={`/subjects/${subject.code}`}>{subject.code}</Link></li>) }
         <div>{ greeting }</div>      
       </ol>
     </>
